@@ -1,49 +1,72 @@
-## Members
-Henry Forsyth, Computer Engineering Student (2024)
-rhforsythjr@vt.edu
-
-## Mentor
-MENTOR NAME HERE
+# Beamforming Research & Implementation Project
 
 ## Current Status
-IN PROGRESS
+**IN PROGRESS**
 
 ## Project Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula, odio eu dictum aliquet, enim elit tempor diam, quis volutpat mi eros ut nisi. Aliquam luctus orci eget accumsan porta. Proin sollicitudin ultricies lacus et varius. Pellentesque tempor vehicula tempus. Integer semper id lorem vehicula tristique. Suspendisse nec placerat libero, eget aliquet eros. Phasellus iaculis quis lorem in ultrices. Nunc lobortis odio at sem pretium dictum. Integer sed tellus quis lorem pretium posuere.
+This project aims to make **beamforming research and implementation more accessible** by developing both simulation and hardware solutions. The team will work on **FDTD-based simulations** and **hardware development of a beamformer**, starting with phased array elements.
 
 ## Educational Value Added
 
-Vivamus dapibus iaculis dui. Nullam vitae arcu a nisi elementum semper eu eu velit. Suspendisse vel dictum lacus. Sed facilisis luctus consequat. Donec vulputate eu dolor in molestie. Maecenas pretium sem non tellus facilisis sollicitudin id ut nulla. In condimentum orci nisi, sagittis facilisis neque convallis eget. Duis ut sem cursus, placerat mi pellentesque, mollis eros. Integer efficitur blandit elit, sed egestas sem porta in. Mauris euismod nulla ac tellus tempus, eu egestas dui molestie. Proin faucibus enim quis consequat sodales. Pellentesque eleifend blandit augue et laoreet. Phasellus vel posuere nisi, ac aliquam arcu.
+This project provides hands-on experience in **RF system design, embedded systems development, phased array technology, and FDTD simulations**. It bridges the gap between theoretical research and practical deployment, preparing engineers for real-world applications in wireless communication and radar systems.
 
 ## Tasks
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+### **Simulation Engineer**
+Your job is to develop **FDTD (Finite-Difference Time-Domain) simulations** for beamformers of different shapes and configurations. You will:
+- Implement an FDTD-based simulation framework.
+- Optimize algorithms for **high accuracy and efficiency**.
+- Work with the hardware team to **validate** simulations against real-world results.
+- Provide visualizations and reports on simulated beam patterns.
+
+### **Embedded Engineers**
+Your role is to develop the **firmware for the Raspberry Pi Pico** to control the beamformer. You will:
+- Implement SPI/I2C communication to interface with:
+  - **MAX2822** for up/down-converting RF signals.
+  - **MAX5864** for ADC/DAC conversion.
+- Develop software to **synchronize** signals across phased array elements.
+- Ensure **real-time data handling** and signal processing.
+- Work closely with the **RF and PCB teams** to integrate the firmware with the hardware.
+
+### **RF Circuit Designers**
+You are responsible for designing the **RF circuitry** for the beamformer. Your tasks include:
+- Designing and developing **phased array antenna elements**.
+- Creating an **RF signal chain** using MAX2822 and MAX5864.
+- Ensuring proper **impedance matching** for minimal signal loss.
+- Collaborating with the **PCB team** to design RF layouts.
+
+### **PCB Designers**
+Your job is to design the **beamformer motherboard** that integrates all components. You will:
+- Create a PCB that connects **MAX2822, MAX5864, and the Raspberry Pi Pico**.
+- Optimize signal routing to **minimize interference and losses**.
+- Prepare **Gerber files** and oversee the PCB manufacturing process.
+- Work closely with **RF engineers** to ensure proper grounding and RF isolation.
 
 ## Design Decisions
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
-
-## Design Misc
-
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+- Engineers should document design choices, including **trade-offs** and **justifications** for component selection.
+- The **simulation team** will provide feedback to optimize antenna element placement.
+- PCB layouts must be reviewed by both **RF and embedded engineers** before fabrication.
 
 ## Steps for Documenting Your Design Process
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+1. Keep a **running log** of design iterations.
+2. Provide **diagrams and schematics** where applicable.
+3. Submit updates to the repository with **detailed commit messages**.
+4. Write **clear documentation** for any custom software or hardware decisions.
 
 ## BOM + Component Cost
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+A bill of materials (BOM) will be maintained to track all **components and costs**. Each engineer should update the BOM when selecting or modifying components.
 
-## Timeline
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
 
 ## Useful Links
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
+- **Documentation for MAX2822**: [Link Here]
+- **Documentation for MAX5864**: [Link Here]
+- **Raspberry Pi Pico SDK**: [Link Here]
+- **FDTD Simulation Resources**: [Link Here]
 
-## Log
 
-<!-- Your Text Here. You may work with your mentor on this later when they are assigned -->
