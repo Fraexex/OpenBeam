@@ -41,11 +41,11 @@ Your role is to develop the **firmware for the Raspberry Pi Pico** to control th
 
 ### **RF Circuit Designers**
 You are responsible for designing the **RF circuitry** for the beamformer. Your tasks include:
--Determine the gain needed for each antenna element
--Select an antenna and create impedance matching circuitry/RF stubs to interface with max2822
--Define design criteria such as Noise Figure, SNR, Bandwidth, Insertion Loss, and VSWR that are optimal for the application
--Test RF circuitry by analyzing S-Parameters and comparing against simulation and design criteria
--Insure RF Front End isnt causing phase coherence issues
+- Determine the gain needed for each antenna element
+- Select an antenna and create impedance matching circuitry/RF stubs to interface with max2822
+- Define design criteria such as Noise Figure, SNR, Bandwidth, Insertion Loss, and VSWR that are optimal for the application
+- Test RF circuitry by analyzing S-Parameters and comparing against simulation and design criteria
+- Insure RF Front End isnt causing phase coherence issues
 - Design Voltage regulation circuits for Power Supply of RF Amplfiers
 
 ### **PCB Designers**
