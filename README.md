@@ -73,10 +73,11 @@ Your job is to take the digital output of the beamformer and turn that into usea
 
 ## Steps for Documenting Your Design Process
 
-1. Keep a **running log** of design iterations.
-2. Provide **diagrams and schematics** where applicable.
-3. Submit updates to the repository with **detailed commit messages**.
-4. Write **clear documentation** for any custom software or hardware decisions.
+1. ALWAYS CREATE A NEW BRANCH FOR DEVELOPMENT
+2. Keep a **running log** of design iterations.
+3. Provide **diagrams and schematics** where applicable.
+4. Submit updates to the repository with **detailed commit messages**.
+5. Write **clear documentation** for any custom software or hardware decisions.
 
 
 ## Useful Links
