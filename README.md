@@ -22,6 +22,12 @@ Your job is to develop **FDTD (Finite-Difference Time-Domain) simulations** for 
 - Work with the hardware team to **validate** simulations against real-world results.
 - Provide visualizations and reports on simulated beam patterns.
 - **Develop standard power spectral distriution simulations** (Hence not FDTD)
+  ![image](https://github.com/user-attachments/assets/7831237f-9bcf-46e8-bf48-c05373335627)
+
+ ** Resources:**
+    - https://medium.com/@itberrios6/introduction-to-beamforming-part-2-68db43c073b6
+    - Van Trees: Optimal Array Processing (txtbook)
+    - Matlab Antenna Array Toolkit
 
 ### **Embedded Engineers**
 Your role is to develop the **firmware for the Raspberry Pi Pico** to control the beamformer. You will:
