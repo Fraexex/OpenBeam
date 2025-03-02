@@ -5,20 +5,21 @@
 
 ## Project Overview
 
-This project aims to make **beamforming research and implementation more accessible** by developing both simulation and hardware solutions. The team will work on **FDTD-based simulations** and **hardware development of a beamformer**, starting with phased array elements.
+This project aims to make **beamforming research and implementation more accessible** by developing both simulation and hardware solutions. The team will work on **FDTD-based simulations** and **hardware development of a beamformer**, starting with phased array elements. Each phased array element will consist of a custom **Software Defined Radio (SDR)** transciver that can transmit/recieve some signal defined by Inphase-Quadrature (IQ) values. 
 
-## Educational Value Added
 
-This project provides hands-on experience in **RF system design, embedded systems development, phased array technology, and FDTD simulations**. It bridges the gap between theoretical research and practical deployment, preparing engineers for real-world applications in wireless communication and radar systems.
+![image](https://github.com/user-attachments/assets/cfbac92b-7dc3-4aab-b908-bf5a2831948e)
 
-## Tasks
 
-### **Simulation Engineer**
+
+
+### **Simulation Engineers**
 Your job is to develop **FDTD (Finite-Difference Time-Domain) simulations** for beamformers of different shapes and configurations. You will:
 - Implement an FDTD-based simulation framework.
 - Optimize algorithms for **high accuracy and efficiency**.
 - Work with the hardware team to **validate** simulations against real-world results.
 - Provide visualizations and reports on simulated beam patterns.
+- **Develop standard power spectral distriution simulations** (Hence not FDTD)
 
 ### **Embedded Engineers**
 Your role is to develop the **firmware for the Raspberry Pi Pico** to control the beamformer. You will:
@@ -28,24 +29,37 @@ Your role is to develop the **firmware for the Raspberry Pi Pico** to control th
 - Develop software to **synchronize** signals across phased array elements.
 - Ensure **real-time data handling** and signal processing.
 - Work closely with the **RF and PCB teams** to integrate the firmware with the hardware.
+- Use the RP2040/RP2350 microcontroller's dedicated programmable state machine hardware (PIO) for 8-bit read/write to **MAX5863**
 
 ### **RF Circuit Designers**
 You are responsible for designing the **RF circuitry** for the beamformer. Your tasks include:
-- Designing and developing **phased array antenna elements**.
-- Creating an **RF signal chain** using MAX2822 and MAX5864.
-- Ensuring proper **impedance matching** for minimal signal loss.
-- Collaborating with the **PCB team** to design RF layouts.
+-Determine the gain needed for each antenna element
+-Select an antenna and create impedance matching circuitry/RF stubs to interface with max2822
+-Define design criteria such as Noise Figure, SNR, Bandwidth, Insertion Loss, and VSWR that are optimal for the application
+-Test RF circuitry by analyzing S-Parameters and comparing against simulation and design criteria
+-Insure RF Front End isnt causing phase coherence issues
+- Design Voltage regulation circuits for Power Supply of RF Amplfiers
 
 ### **PCB Designers**
 Your job is to design the **beamformer motherboard** that integrates all components. You will:
 - Create a PCB that connects **MAX2822, MAX5864, and the Raspberry Pi Pico**.
-- Optimize signal routing to **minimize interference and losses**.
+- Design Voltage regulation circuits for Power Supply of RF Amplfiers
+- Optimize signal routing to **maximize phase coherence between differential pairs and IQ signals**
 - Prepare **Gerber files** and oversee the PCB manufacturing process.
-- Work closely with **RF engineers** to ensure proper grounding and RF isolation.
+- Work closely with **RF engineers** to ensure proper grounding, RF isolation,  and Impedance Matching
+- Design an analog phase shifter using op amps (the beamformer is digital, but wed like to offer analog solutions as well)
+- Test PCBS
+
+  ### **Networking Engineers**
+  Your job is to take the digital output of the beamformer and turn that into useable WIFI.
+  - Use wireshark for packet capture
+  - Research best tools for implementing OSI model
+  - Research GR-GSM Github library
+  - Looking for subteam lead to beter define requirements
 
 ## Design Decisions
 
-- Engineers should document design choices, including **trade-offs** and **justifications** for component selection.
+- Engineers should document design choices, including **trade-offs** and **justifications**.
 - The **simulation team** will provide feedback to optimize antenna element placement.
 - PCB layouts must be reviewed by both **RF and embedded engineers** before fabrication.
 
@@ -56,17 +70,12 @@ Your job is to design the **beamformer motherboard** that integrates all compone
 3. Submit updates to the repository with **detailed commit messages**.
 4. Write **clear documentation** for any custom software or hardware decisions.
 
-## BOM + Component Cost
-
-A bill of materials (BOM) will be maintained to track all **components and costs**. Each engineer should update the BOM when selecting or modifying components.
-
-
 
 ## Useful Links
 
-- **Documentation for MAX2822**: [Link Here]
-- **Documentation for MAX5864**: [Link Here]
-- **Raspberry Pi Pico SDK**: [Link Here]
-- **FDTD Simulation Resources**: [Link Here]
+- **Documentation for MAX2822**: https://rocelec.widen.net/view/pdf/ybgjsvttkr/MAXMS12737-1.pdf?t.download=true&u=5oefqw
+- **Documentation for MAX5864**: https://www.analog.com/media/en/technical-documentation/data-sheets/MAX5864.pdf
+- **Raspberry Pi Pico SDK and HW manual**: google it
+- **FDTD Simulation Resources**: https://fdtd.readthedocs.io/en/latest/
 
 
