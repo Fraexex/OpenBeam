@@ -5,11 +5,13 @@
 
 ## Project Overview
 
-This project aims to make **beamforming research and implementation more accessible** by developing both simulation and hardware solutions. The team will work on **FDTD-based simulations** and **hardware development of a beamformer**, starting with phased array elements. Each phased array element will consist of a custom **Software Defined Radio (SDR)** transciver that can transmit/recieve some signal defined by Inphase-Quadrature (IQ) values. 
+This project aims to make **beamforming research and implementation more accessible** by developing both simulation and hardware solutions. The team will work on **FDTD-based simulations** and **hardware development of a beamformer**, starting with phased array elements. Each phased array element will consist of a custom **Software Defined Radio (SDR)** shown below. 
 
 
 ![image](https://github.com/user-attachments/assets/cfbac92b-7dc3-4aab-b908-bf5a2831948e)
 
+Here is how it works. The above pcb is a prototype sheild to the Raspberry PI PICO board. The Pico board connects via serial to the main command system and recives the individual antenna element gain and phase shift defined by beamforming simulation team in addition to the actual transmit data. This data then gets parsed and put into the uC's Direct Memory Address (DMA). Upon some clock cycle the DMA then loads this value into the PICO's Programmable Input Output (PIO) TX FIFO which gets outputed to 8 pins on the pico which are connected to the MAX586X Digital to Analog Converter (DAC). The DAC then creates a baseband Intermediate Frequency (IF) which gets connected to the input of the MAX2822. The MAX2822 will then upconvert this IF to 2.5GHz, this goes into a Balun which makes the differential RF single ended to interface with the RF amplfier which then transmits. 
+On the RX chain, we have the opposite process happen. The RF block applies a gain to the received signal, is converted to a differntial pair and inputted into the MAX2822 which downconverts the signal back down to IF. This IF is then connected to the ADC in the MAX586X and digitized. The PIOs then read this 8-bit word outputted form the ADC and load them into the RX FIFO. The DMA then gets this 8-bit word from the RX-FIFO.
 
 
 
@@ -50,12 +52,12 @@ Your job is to design the **beamformer motherboard** that integrates all compone
 - Design an analog phase shifter using op amps (the beamformer is digital, but wed like to offer analog solutions as well)
 - Test PCBS
 
-  ### **Networking Engineers**
-  Your job is to take the digital output of the beamformer and turn that into useable WIFI.
-  - Use wireshark for packet capture
-  - Research best tools for implementing OSI model
-  - Research GR-GSM Github library
-  - Looking for subteam lead to beter define requirements
+### **Networking Engineers**
+Your job is to take the digital output of the beamformer and turn that into useable WIFI.
+- Use wireshark for packet capture
+- Research best tools for implementing OSI model
+- Research GR-GSM Github library
+- Looking for subteam lead to beter define requirements
 
 ## Design Decisions
 
